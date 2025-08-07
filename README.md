@@ -220,7 +220,7 @@ Questo progetto è licenziato sotto la GPL v2+ - vedi il file [LICENSE](LICENSE)
 
 Se questo progetto ti è stato utile per il tuo lavoro, considera una piccola donazione:
 
-[![Ko-fi](https://ko-fi.com/insidetelegramproject)
+[Ko-fi](https://ko-fi.com/insidetelegramproject)
 
 Le donazioni aiutano a mantenere il progetto attivo e a sviluppare nuove funzionalità!
 
@@ -235,21 +235,11 @@ Le donazioni aiutano a mantenere il progetto attivo e a sviluppare nuove funzion
 
 Hai domande? Vuoi collaborare? Contattami!
 
-[![Telegram]](https://t.me/ErBoss88)
-[![Instagram]](https://instagram.com/flaviusharabor/)
-[![Twitter]](https://twitter.com/FlaviusHarabor)
-[![LinkedIn]](https://www.linkedin.com/in/flaviusflorinharabor/)
-[![YouTube]](http://www.youtube.com/c/FlaviusFlorinHarabor)
-
----
-
-<div align="center">
-
-**Meta Editor in Bulk Pro** - Rendi il tuo WordPress SEO-friendly in pochi click! 🚀
-
-*Made with ❤️ by Flavius Florin Harabor*
-
-</div>
+- [Telegram](https://t.me/ErBoss88)
+- [Instagram](https://instagram.com/flaviusharabor/)
+- [Twitter](https://twitter.com/FlaviusHarabor)
+- [LinkedIn](https://www.linkedin.com/in/flaviusflorinharabor/)
+- [YouTube](http://www.youtube.com/c/FlaviusFlorinHarabor)
 
 ---
 
