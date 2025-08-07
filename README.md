@@ -89,6 +89,14 @@ Un plugin WordPress professionale per la gestione avanzata in blocco dei meta da
 <img width="1806" height="795" alt="image" src="https://github.com/user-attachments/assets/f92a1522-9d24-4dd5-a742-0499859230c4" />
 
 
+### Email con Report Settimanale
+<img width="1220" height="716" alt="Schermata del 2025-08-07 23-21-46" src="https://github.com/user-attachments/assets/bf5939f9-7b92-47bc-a233-e8864d3fbcc3" />
+
+### Nota:
+- Dalle Impostazioni si può Forzare il Cron Job per l'invio della mail
+- La mail con il report potrebbe arrivare in spam
+
+
 ## 🔧 Configurazione Avanzata
 
 ### Plugin SEO Supportati
@@ -152,6 +160,10 @@ Rigenera dati dalle impostazioni
 ```
 
 ## 🔄 Changelog
+
+### Version 2.0.x
+- 🐛 **Is not a bug is a feature**: qualsiasi cosa che può essere considerata un bug, mi dispiace non lo è 😈
+In realtà si tratta molto probabilmente di una funzione non più implementata per pigrizia oppure perché per il momento questa versione va benissimo così.
 
 ### Version 2.0.2 (Current)
 - ✨ **Nuovo**: Modulo ottimizzazione immagini completo
