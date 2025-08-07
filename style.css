@@ -1,0 +1,1772 @@
+/* ===================================================================
+   1. STRUTTURA GENERALE
+   =================================================================== */
+.meb-wrap { 
+    margin-right: 20px; 
+}
+
+.meb-card { 
+    background: #fff; 
+    border: 1px solid #ccd0d4; 
+    border-radius: 4px; 
+    margin-top: 20px; 
+}
+
+.meb-dashboard-flex { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+}
+
+.meb-chart-container { 
+    flex: 2 1 600px; 
+    padding: 15px; 
+    min-height: 400px;
+}
+
+.meb-stats-container { 
+    flex: 1 1 300px; 
+    padding: 15px; 
+}
+
+.meb-stats-container h3, 
+.meb-chart-container h3 { 
+    margin-top: 0; 
+}
+
+.meb-stats-container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.meb-stats-container li {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.meb-stats-container li div:first-child {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.progress-bar-container { 
+    background-color: #e0e0e0; 
+    border-radius: 4px; 
+    height: 8px; 
+    overflow: hidden; 
+}
+
+.progress-bar { 
+    height: 100%; 
+    border-radius: 4px; 
+    transition: width 0.3s ease;
+}
+
+.progress-bar.low { 
+    background-color: #ef4444; 
+}
+
+.progress-bar.medium { 
+    background-color: #f59e0b; 
+}
+
+.progress-bar.high { 
+    background-color: #22c55e; 
+}
+
+.meb-actions { 
+    margin-top: 20px; 
+    display: flex;
+    gap: 10px;
+}
+
+/* ===================================================================
+   2. STILI PER IL GRAFICO
+   =================================================================== */
+.meb-chart-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 15px; 
+}
+
+.meb-chart-header h3 { 
+    margin: 0; 
+}
+
+#meb-date-picker { 
+    border: 1px solid #c3c4c7; 
+    padding: 6px 10px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2350575e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E") no-repeat right 8px center; 
+    padding-right: 35px; 
+    width: 250px; 
+}
+
+#mebHistoryChart { 
+    max-height: 400px !important;
+    min-height: 300px !important;
+    width: 100% !important;
+}
+
+/* ===================================================================
+   3. FILTRI E TABELLA
+   =================================================================== */
+.meb-table-container { 
+    padding: 0; 
+}
+
+.meb-filters { 
+    padding: 15px; 
+    border-bottom: 1px solid #ccd0d4; 
+    background: #f6f7f7; 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.meb-filters label {
+    font-weight: 600;
+}
+
+.meb-filters select,
+.meb-filters input[type="text"] {
+    margin-left: 5px;
+}
+
+.meb-table-wrapper { 
+    overflow-x: auto; 
+}
+
+.meb-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+.meb-table th, 
+.meb-table td { 
+    text-align: left; 
+    padding: 12px; 
+    vertical-align: top; 
+}
+
+.meb-table .meb-main-row td { 
+    border-bottom: 1px solid #e0e2e4; 
+}
+
+.meb-table .meb-main-row.editing td {
+    background-color: #f0f6fc;
+}
+
+.meb-table-footer { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px; 
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.meb-table .column-title { 
+    width: 30%; 
+}
+
+.meb-table .column-keyword { 
+    width: 15%; 
+}
+
+.meb-table .column-meta-title { 
+    width: 20%; 
+}
+
+.meb-table .column-meta-description { 
+    width: 20%; 
+}
+
+.meb-table .column-slug { 
+    width: 15%; 
+}
+
+.row-actions { 
+    margin-top: 4px; 
+}
+
+.meb-analyze-button,
+.meb-edit-button,
+.meb-view-button { 
+    color: #2271b1; 
+    text-decoration: none; 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 4px; 
+    font-weight: 600; 
+    padding: 0; 
+    font-size: 13px; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.meb-analyze-button:hover,
+.meb-edit-button:hover {
+    color: #135e96;
+}
+
+.meb-view-button {
+    color: #00a32a;
+}
+
+.meb-view-button:hover {
+    color: #007c20;
+}
+
+.row-actions .separator {
+    color: #dcdcde;
+    font-weight: normal;
+    margin: 0 4px;
+}
+
+.meb-analyze-button .dashicons,
+.meb-edit-button .dashicons,
+.meb-view-button .dashicons { 
+    font-size: 16px; 
+}
+
+.meb-meta-input { 
+    width: 100%; 
+    box-sizing: border-box; 
+    border: 1px solid #c3c4c7;
+    padding: 6px 8px;
+    border-radius: 4px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.meb-meta-input:focus {
+    border-color: #2271b1;
+    box-shadow: 0 0 0 1px #2271b1;
+    outline: none;
+}
+
+/* ===================================================================
+   4. INDICATORI DI LUNGHEZZA
+   =================================================================== */
+.meb-length-indicator { 
+    margin-top: 5px; 
+}
+
+.meb-length-indicator .indicator-bar-bg { 
+    display: block; 
+    height: 5px; 
+    border-radius: 4px; 
+    background-color: #e5e7eb; 
+    overflow: hidden; 
+}
+
+.meb-length-indicator .indicator-bar { 
+    height: 100%; 
+    transition: width 0.3s ease, background-color 0.3s ease; 
+}
+
+.meb-length-indicator .indicator-bar.ok { 
+    background-color: #22c55e; 
+}
+
+.meb-length-indicator .indicator-bar.warning { 
+    background-color: #f59e0b; 
+}
+
+.meb-length-indicator .indicator-bar.over { 
+    background-color: #ef4444; 
+}
+
+.meb-length-indicator .indicator-text { 
+    font-size: 12px; 
+    color: #646970; 
+    display: block; 
+    margin-top: 4px; 
+    text-align: right; 
+}
+
+/* ===================================================================
+   5. DRAWER/CASSETTO ANALISI
+   =================================================================== */
+.meb-drawer-row.is-open td { 
+    background-color: #f8f9fa; 
+}
+
+.meb-drawer-row td { 
+    padding: 0; 
+    border-bottom: 1px solid #e0e2e4;
+}
+
+.meb-drawer-content { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 30px; 
+    padding: 20px; 
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.meb-drawer-preview { 
+    flex: 1 1 400px; 
+    min-width: 350px; 
+}
+
+.meb-drawer-analysis { 
+    flex: 1 1 300px; 
+    min-width: 280px; 
+}
+
+.meb-drawer-preview h4, 
+.meb-drawer-analysis h4 { 
+    margin: 0 0 15px 0; 
+    font-size: 16px; 
+    font-weight: 600; 
+}
+
+/* ===================================================================
+   6. ANTEPRIMA GOOGLE REALISTICA
+   =================================================================== */
+.meb-preview-toggles {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.meb-preview-toggle {
+    background: #f8f9fa;
+    border: 1px solid #dadce0;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #5f6368;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.meb-preview-toggle:hover {
+    background: #e8f0fe;
+    border-color: #1a73e8;
+    color: #1a73e8;
+}
+
+.meb-preview-toggle.active {
+    background: #1a73e8;
+    border-color: #1a73e8;
+    color: #fff;
+}
+
+/* Container principale anteprima Google */
+.google-serp-preview {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    font-family: arial, sans-serif;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.google-serp-preview.mobile-view {
+    max-width: 375px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+/* Barra di ricerca Google */
+.google-search-bar {
+    margin-bottom: 20px;
+}
+
+.search-input {
+    background: #fff;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.2s ease;
+}
+
+.search-input:hover {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+
+.search-icon {
+    font-size: 16px;
+    color: #9aa0a6;
+}
+
+.search-query {
+    color: #202124;
+    font-size: 16px;
+    flex: 1;
+    font-weight: 400;
+}
+
+.voice-search,
+.camera-search {
+    font-size: 16px;
+    color: #4285f4;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.voice-search:hover,
+.camera-search:hover {
+    transform: scale(1.1);
+}
+
+/* Tabs Google */
+.google-tabs {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #dadce0;
+    padding-bottom: 0;
+    overflow-x: auto;
+}
+
+.google-tab {
+    color: #5f6368;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 8px 0;
+    border-bottom: 3px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.google-tab.active {
+    color: #1a73e8;
+    border-bottom-color: #1a73e8;
+}
+
+.google-tab:hover:not(.active) {
+    color: #1a73e8;
+}
+
+.tab-icon {
+    font-size: 12px;
+}
+
+/* Statistiche risultati */
+.search-stats {
+    margin: 16px 0 24px 0;
+}
+
+.results-count {
+    color: #70757a;
+    font-size: 14px;
+}
+
+/* Pulsante AI Overview */
+.ai-overview-btn {
+    background: linear-gradient(135deg, #4285f4 0%, #34a853 50%, #fbbc04 100%);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: default;  /* <-- CAMBIA QUI */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    font-family: arial, sans-serif;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    pointer-events: none;  /* <-- AGGIUNGI QUESTA RIGA */
+}
+
+/* Se vuoi fare una implementazione o attivare il tasto AI Overview
+.ai-overview-btn {
+    background: linear-gradient(135deg, #4285f4 0%, #34a853 50%, #fbbc04 100%);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    font-family: arial, sans-serif;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    transition: all 0.2s ease;
+}
+
+.ai-overview-btn:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transform: translateY(-1px);
+}
+ */
+
+.ai-icon {
+    font-size: 14px;
+    animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Risultato di ricerca principale */
+.search-result {
+    background: white;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    border: 1px solid #dadce0;
+    transition: all 0.2s ease;
+}
+
+.search-result:hover {
+    box-shadow: 0 1px 6px rgba(32,33,36,.28);
+}
+
+.search-result.product-result {
+    border-left: 4px solid #34a853;
+    background: linear-gradient(135deg, #fff 0%, #f8fff8 100%);
+}
+
+/* URL e breadcrumb */
+.result-url {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.site-favicon {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.site-url {
+    font-size: 14px;
+    color: #202124;
+    line-height: 1.3;
+}
+
+.breadcrumb {
+    color: #5f6368;
+    font-size: 14px;
+}
+
+/* Titolo del risultato */
+.result-title {
+    margin: 2px 0 4px 0;
+}
+
+.result-title a {
+    font-size: 20px;
+    color: #1a0dab;
+    text-decoration: none;
+    display: block;
+    line-height: 1.3;
+    font-weight: normal;
+    transition: color 0.1s ease;
+}
+
+.result-title a:hover {
+    text-decoration: underline;
+}
+
+.result-title a:visited {
+    color: #609;
+}
+
+/* Descrizione */
+.result-description {
+    font-size: 14px;
+    color: #4d5156;
+    line-height: 1.58;
+    margin: 0;
+    word-wrap: break-word;
+}
+
+/* Info prodotto WooCommerce */
+.product-info {
+    margin-top: 12px;
+    padding: 12px;
+    background: rgba(52, 168, 83, 0.1);
+    border-radius: 8px;
+    border-left: 4px solid #34a853;
+}
+
+.product-price {
+    font-size: 18px;
+    color: #137333;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #5f6368;
+    margin-bottom: 4px;
+}
+
+.stars {
+    color: #fbbc04;
+    font-size: 14px;
+}
+
+.product-availability {
+    color: #137333;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Extra info risultati */
+.result-extras {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 13px;
+    color: #5f6368;
+}
+
+.result-date,
+.reading-time {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* ===================================================================
+   7. ANALISI SEO
+   =================================================================== */
+.seo-analysis-header { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+.analysis-progress-bar-bg { 
+    flex-grow: 1; 
+    height: 8px; 
+    background-color: #e5e7eb; 
+    border-radius: 4px; 
+    overflow: hidden; 
+}
+
+.analysis-progress-bar { 
+    height: 100%; 
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.analysis-progress-bar.is-poor { 
+    background-color: #ef4444; 
+}
+
+.analysis-progress-bar.is-ok { 
+    background-color: #f59e0b; 
+}
+
+.analysis-progress-bar.is-good { 
+    background-color: #22c55e; 
+}
+
+.seo-analysis-details { 
+    margin-top: 15px; 
+    border-top: 1px solid #dfe1e5; 
+    padding-top: 15px; 
+}
+
+.seo-analysis-details ul { 
+    margin: 0; 
+    list-style: none; 
+    padding: 0;
+}
+
+.seo-analysis-details li { 
+    display: flex; 
+    gap: 8px; 
+    margin-bottom: 8px; 
+    font-size: 13px; 
+    align-items: flex-start;
+    position: relative;
+}
+
+.analysis-item {
+    transition: background-color 0.2s ease;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.analysis-item:hover {
+    background-color: #f8f9fa;
+}
+
+.analysis-item.keyword {
+    border-left: 3px solid #4285f4;
+    padding-left: 8px;
+}
+
+.analysis-item.length {
+    border-left: 3px solid #34a853;
+    padding-left: 8px;
+}
+
+.analysis-item.engagement {
+    border-left: 3px solid #fbbc04;
+    padding-left: 8px;
+}
+
+.status-icon {
+    font-size: 14px;
+    min-width: 16px;
+}
+
+.tooltip {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===================================================================
+   8. PAGINAZIONE
+   =================================================================== */
+.meb-pagination ul { 
+    display: flex; 
+    list-style: none; 
+    margin: 0; 
+    padding: 0;
+    gap: 5px;
+}
+
+.meb-pagination .page-numbers { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background: #f0f0f1; 
+    border: 1px solid #c3c4c7; 
+    color: #50575e; 
+    text-decoration: none; 
+    min-width: 38px; 
+    height: 38px; 
+    border-radius: 4px; 
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.meb-pagination .page-numbers:hover {
+    background: #e8e8e9;
+    transform: translateY(-1px);
+}
+
+.meb-pagination li .current { 
+    background: #2271b1; 
+    border-color: #2271b1; 
+    color: #fff; 
+}
+
+/* ===================================================================
+   9. SPINNER E STATI DI CARICAMENTO
+   =================================================================== */
+.button .spinner { 
+    display: none; 
+    vertical-align: middle; 
+    margin-left: 5px;
+}
+
+.button.is-busy .spinner { 
+    display: inline-block; 
+}
+
+.button.is-busy .save-text {
+    opacity: 0.7;
+}
+
+.button.is-busy {
+    position: relative;
+    overflow: hidden;
+}
+
+.button.is-busy::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* ===================================================================
+   10. FORM IMPORTAZIONE
+   =================================================================== */
+#meb-import-form-container {
+    padding: 20px;
+}
+
+#meb-import-form-container h3 {
+    margin-top: 0;
+}
+
+#meb-import-form-container p {
+    margin-bottom: 15px;
+}
+
+#meb-import-form-container input[type="file"] {
+    margin-top: 5px;
+}
+
+/* ===================================================================
+   11. SUPPORTO WOOCOMMERCE E TASSONOMIE
+   =================================================================== */
+.woocommerce-product-row {
+    background-color: #f0f6fc;
+    border-left: 3px solid #4285f4;
+}
+
+.taxonomy-row {
+    background-color: #f6fff0;
+    border-left: 3px solid #34a853;
+}
+
+/* ===================================================================
+   12. RESPONSIVE DESIGN
+   =================================================================== */
+@media (max-width: 768px) {
+    .meb-dashboard-flex {
+        flex-direction: column;
+    }
+    
+    .meb-chart-container,
+    .meb-stats-container {
+        flex: 1 1 auto;
+    }
+    
+    .meb-drawer-content {
+        flex-direction: column;
+        gap: 20px;
+   }
+   
+   .meb-drawer-preview,
+   .meb-drawer-analysis {
+       min-width: auto;
+   }
+   
+   .meb-filters {
+       flex-direction: column;
+       align-items: flex-start;
+       gap: 10px;
+   }
+   
+   .meb-table-footer {
+       flex-direction: column;
+       align-items: flex-start;
+   }
+   
+   #meb-date-picker {
+       width: 100%;
+       max-width: 250px;
+   }
+   
+   .google-serp-preview {
+       padding: 12px;
+   }
+   
+   .google-tabs {
+       gap: 16px;
+   }
+   
+   .search-input {
+       padding: 10px 16px;
+   }
+   
+   .result-title a {
+       font-size: 18px;
+   }
+   
+   .result-description {
+       font-size: 13px;
+   }
+   
+   .meb-preview-toggles {
+       gap: 4px;
+   }
+   
+   .meb-preview-toggle {
+       padding: 6px 12px;
+       font-size: 12px;
+   }
+}
+
+@media (max-width: 480px) {
+   .meb-wrap {
+       margin-right: 10px;
+   }
+   
+   .meb-drawer-content {
+       padding: 15px;
+   }
+   
+   .google-serp-preview {
+       padding: 10px;
+   }
+   
+   .search-input {
+       padding: 8px 12px;
+       gap: 8px;
+   }
+   
+   .google-tabs {
+       gap: 12px;
+       font-size: 12px;
+   }
+   
+   .result-title a {
+       font-size: 16px;
+   }
+   
+   .ai-overview-btn {
+       padding: 6px 12px;
+       font-size: 12px;
+   }
+   
+   .product-info {
+       padding: 8px;
+   }
+   
+   .product-price {
+       font-size: 16px;
+   }
+}
+
+/* ===================================================================
+  13. NOTICE E MESSAGGI
+  =================================================================== */
+.notice.is-dismissible {
+   margin: 20px 0;
+   animation: slideInDown 0.3s ease-out;
+}
+
+@keyframes slideInDown {
+   from {
+       opacity: 0;
+       transform: translateY(-20px);
+   }
+   to {
+       opacity: 1;
+       transform: translateY(0);
+   }
+}
+
+.notice.notice-success {
+   border-left-color: #22c55e;
+}
+
+.notice.notice-error {
+   border-left-color: #ef4444;
+}
+
+/* ===================================================================
+  14. STATI HOVER E FOCUS
+  =================================================================== */
+.meb-table tbody tr:hover .meb-main-row td {
+   background-color: #f8f9fa;
+}
+
+.meb-card:hover {
+   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+   transform: translateY(-1px);
+}
+
+.meb-card {
+   transition: all 0.2s ease;
+}
+
+/* ===================================================================
+  15. ACCESSIBILITÀ
+  =================================================================== */
+.meb-analyze-button:focus,
+.meb-preview-toggle:focus,
+.meb-edit-button:focus,
+.meb-view-button:focus {
+   outline: 2px solid #2271b1;
+   outline-offset: 2px;
+   box-shadow: 0 0 0 3px rgba(34, 113, 177, 0.1);
+}
+
+.meb-meta-input:focus {
+   box-shadow: 0 0 0 3px rgba(34, 113, 177, 0.1);
+}
+
+.google-tab:focus,
+.ai-overview-btn:focus {
+   outline: 2px solid #1a73e8;
+   outline-offset: 2px;
+}
+
+/* ===================================================================
+  16. ANIMAZIONI E TRANSIZIONI
+  =================================================================== */
+.meb-drawer-row {
+   transition: all 0.2s ease;
+}
+
+.progress-bar,
+.indicator-bar,
+.analysis-progress-bar {
+   transition: all 0.3s ease;
+}
+
+.meb-main-row {
+   transition: background-color 0.2s ease;
+}
+
+.search-result {
+   transition: all 0.2s ease;
+}
+
+.google-tab {
+   transition: all 0.2s ease;
+}
+
+.meb-preview-toggle {
+   transition: all 0.2s ease;
+}
+
+/* Animazione per evidenziazione keyword */
+.result-description strong {
+   animation: highlight 0.5s ease-in-out;
+}
+
+@keyframes highlight {
+   0% { background-color: transparent; }
+   50% { background-color: #fff3cd; }
+   100% { background-color: #fff3cd; }
+}
+
+/* ===================================================================
+  17. TEMA SCURO (OPZIONALE)
+  =================================================================== 
+@media (prefers-color-scheme: dark) {
+   .google-serp-preview {
+       background: #202124;
+       color: #bdc1c6;
+   }
+   
+   .search-input {
+       background: #303134;
+       border-color: #5f6368;
+       color: #bdc1c6;
+   }
+   
+   .google-tab {
+       color: #9aa0a6;
+   }
+   
+   .google-tab.active {
+       color: #8ab4f8;
+       border-bottom-color: #8ab4f8;
+   }
+   
+   .result-title a {
+       color: #8ab4f8;
+   }
+   
+   .result-description {
+       color: #bdc1c6;
+   }
+   
+   .search-result {
+       background: #303134;
+       border-color: #5f6368;
+   }
+} */
+
+/* ===================================================================
+  18. PRINT STYLES
+  =================================================================== */
+@media print {
+   .meb-dashboard-flex,
+   .meb-chart-container,
+   .meb-actions,
+   .meb-filters,
+   .meb-preview-toggles,
+   .row-actions {
+       display: none !important;
+   }
+   
+   .meb-drawer-content {
+       page-break-inside: avoid;
+   }
+   
+   .google-serp-preview {
+       box-shadow: none;
+       border: 1px solid #ddd;
+   }
+}
+
+/* ===================================================================
+  19. MICRO-ANIMAZIONI PER UX
+  =================================================================== */
+.meb-analyze-button:active {
+   transform: scale(0.95);
+}
+
+.ai-overview-btn:active {
+   transform: translateY(0) scale(0.98);
+}
+
+.meb-preview-toggle:active {
+   transform: scale(0.95);
+}
+
+/* Pulsazione per elementi attivi */
+.meb-main-row.editing {
+   animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+   0% { box-shadow: 0 0 0 0 rgba(34, 113, 177, 0.4); }
+   70% { box-shadow: 0 0 0 10px rgba(34, 113, 177, 0); }
+   100% { box-shadow: 0 0 0 0 rgba(34, 113, 177, 0); }
+}
+
+/* ===================================================================
+  20. UTILITÀ E HELPER CLASSES
+  =================================================================== */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: 8px; }
+.mb-2 { margin-bottom: 16px; }
+.mb-3 { margin-bottom: 24px; }
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: 8px; }
+.mt-2 { margin-top: 16px; }
+.mt-3 { margin-top: 24px; }
+
+.hidden { display: none; }
+.visible { display: block; }
+
+.fade-in {
+   animation: fadeIn 0.3s ease-in;
+}
+
+.fade-out {
+   animation: fadeOut 0.3s ease-out;
+}
+
+@keyframes fadeOut {
+   from { opacity: 1; }
+   to { opacity: 0; }
+}
+
+/* ===================================================================
+  21. MIGLIORAMENTI FINALI
+  =================================================================== */
+
+/* Scrollbar personalizzate per webkit */
+.meb-table-wrapper::-webkit-scrollbar,
+.google-tabs::-webkit-scrollbar {
+   height: 8px;
+}
+
+.meb-table-wrapper::-webkit-scrollbar-track,
+.google-tabs::-webkit-scrollbar-track {
+   background: #f1f1f1;
+   border-radius: 4px;
+}
+
+.meb-table-wrapper::-webkit-scrollbar-thumb,
+.google-tabs::-webkit-scrollbar-thumb {
+   background: #c1c1c1;
+   border-radius: 4px;
+}
+
+.meb-table-wrapper::-webkit-scrollbar-thumb:hover,
+.google-tabs::-webkit-scrollbar-thumb:hover {
+   background: #a8a8a8;
+}
+
+/* Stile per selezione testo */
+::selection {
+   background-color: #b3d4fc;
+   color: #000;
+}
+
+::-moz-selection {
+   background-color: #b3d4fc;
+   color: #000;
+}
+
+/* Focus ring migliorato */
+*:focus {
+   outline: none;
+}
+
+*:focus-visible {
+   outline: 2px solid #2271b1;
+   outline-offset: 2px;
+}
+
+/* Miglioramento contrasto per accessibilità */
+.high-contrast .result-description {
+   color: #000;
+}
+
+.high-contrast .google-tab {
+   color: #000;
+}
+
+.high-contrast .search-query {
+   color: #000;
+   font-weight: 600;
+}
+
+/* Stati di caricamento per i drawer */
+.meb-drawer-row.loading {
+   opacity: 0.6;
+   pointer-events: none;
+}
+
+.meb-drawer-row.loading::after {
+   content: '';
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 20px;
+   height: 20px;
+   margin: -10px 0 0 -10px;
+   border: 2px solid #f3f3f3;
+   border-top: 2px solid #2271b1;
+   border-radius: 50%;
+   animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+   0% { transform: rotate(0deg); }
+   100% { transform: rotate(360deg); }
+}
+
+/* Stile finale per un look professionale */
+.meb-wrap {
+   font-feature-settings: "liga" 1, "kern" 1;
+   text-rendering: optimizeLegibility;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Stili per separatori nel select */
+#meb_post_type option[disabled] {
+    background: #e8f4fd !important;
+    color: #1d4ed8 !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
+    text-align: center !important;
+    padding: 8px 0 !important;
+}
+
+#meb_post_type option:not([disabled]) {
+    padding-left: 8px;
+}
+
+
+/* ===================================================================
+   21.1 STILI PER INTEGRAZIONE MULTILINGUA
+   =================================================================== */
+
+/* Controlli grafico con lingua */
+.meb-chart-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Info lingua nella sidebar */
+.meb-language-info {
+    border-left: 4px solid #1d4ed8;
+    font-weight: 500;
+}
+
+.meb-language-info strong {
+    color: #1d4ed8;
+}
+
+/* Miglioramenti al filtro lingua */
+#meb_language option,
+#meb-chart-language option {
+    padding: 4px 8px;
+}
+
+/* Stile per le bandiere nei select */
+select option img {
+    vertical-align: middle;
+}
+
+/* Reset filtri button */
+.meb-filters .button-secondary {
+    background: #f6f7f7;
+    border-color: #dcdcde;
+    color: #3c434a;
+}
+
+.meb-filters .button-secondary:hover {
+    background: #f0f0f1;
+    border-color: #8c8f94;
+}
+
+/* Responsive per controlli multilingua */
+@media (max-width: 768px) {
+    .meb-chart-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    
+    #meb-chart-language {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+/* ===================================================================
+  22. NUOVI STILI PER GESTIONE IMMAGINI
+  =================================================================== */
+
+/* Filtri immagini */
+.meb-image-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.filter-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-row label {
+    min-width: 80px;
+    font-weight: 600;
+}
+
+.filter-row input, .filter-row select {
+    flex: 1;
+}
+
+/* Griglia immagini */
+.meb-images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    min-height: 400px;
+}
+
+.meb-image-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.meb-image-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.meb-image-card.selected {
+    border-color: #0073aa;
+    box-shadow: 0 0 0 2px rgba(0,115,170,0.3);
+}
+
+/* Thumbnail immagine */
+.meb-image-thumbnail {
+    width: 100%;
+    height: 180px;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.meb-image-thumbnail img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+/* Info immagine */
+.meb-image-info {
+    padding: 15px;
+}
+
+.meb-image-title {
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.meb-image-meta {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.meb-image-alt {
+    font-size: 12px;
+    font-style: italic;
+    margin-bottom: 10px;
+    min-height: 32px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.meb-image-alt.empty {
+    color: #d63638;
+}
+
+/* Azioni immagine */
+.meb-image-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.meb-image-actions .button {
+    flex: 1;
+    min-width: auto;
+    padding: 4px 8px;
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+/* Elementi overlay */
+.meb-image-checkbox {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+}
+
+.meb-image-status {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    z-index: 2;
+}
+
+.meb-image-status.optimized {
+    background: #22c55e;
+}
+
+.meb-image-status.large {
+    background: #f59e0b;
+}
+
+.meb-image-status.no-alt {
+    background: #ef4444;
+}
+
+/* ===================================================================
+  23. MODAL IMMAGINI
+  =================================================================== */
+
+.meb-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.meb-modal-content {
+    background: white;
+    border-radius: 8px;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.meb-modal-header {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.meb-modal-header h3 {
+    margin: 0;
+}
+
+.meb-modal-close {
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.meb-modal-body {
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.meb-image-preview {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.meb-image-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.meb-image-details {
+    flex: 1;
+    min-width: 300px;
+}
+
+.meb-field-group {
+    margin-bottom: 20px;
+}
+
+.meb-field-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.meb-field-group input {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.meb-optimization-info {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+    border-left: 4px solid #0073aa;
+}
+
+.meb-modal-footer {
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+/* ===================================================================
+  24. BARRA AZIONI IN BLOCCO
+  =================================================================== */
+
+.meb-bulk-actions-bar {
+    background: #e8f4fd;
+    border-bottom: 1px solid #c3c4c7;
+}
+
+/* ===================================================================
+  25. PROGRESS MODAL
+  =================================================================== */
+
+.meb-progress-modal .meb-progress-bar {
+    background: #e0e0e0;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.meb-progress-modal .meb-progress-fill {
+    background: linear-gradient(90deg, #4CAF50, #2196F3);
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+/* ===================================================================
+  26. NOTIFICHE
+  =================================================================== */
+
+.meb-notification {
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* ===================================================================
+  27. DRAG & DROP
+  =================================================================== */
+
+.meb-drag-over::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 115, 170, 0.1);
+    border: 4px dashed #0073aa;
+    z-index: 9998;
+    pointer-events: none;
+}
+
+/* ===================================================================
+  28. RESPONSIVE PER IMMAGINI
+  =================================================================== */
+
+@media (max-width: 768px) {
+    .meb-images-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .meb-modal-body {
+        flex-direction: column;
+    }
+    
+    .meb-image-details {
+        min-width: auto;
+    }
+    
+    .filter-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .filter-row label {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .meb-images-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .meb-image-actions {
+        flex-direction: column;
+    }
+    
+    .meb-modal-content {
+        margin: 10px;
+        max-height: calc(100vh - 20px);
+    }
+}
+
+/* ===================================================================
+  29. SLIDER PER IMPOSTAZIONI
+  =================================================================== */
+
+.meb-quality-slider {
+    width: 200px;
+    margin-right: 10px;
+}
+
+/* ===================================================================
+  30. ICONE AZIONI MANUTENZIONE
+  =================================================================== */
+
+#meb-regenerate-stats .dashicons,
+#meb-clear-cache .dashicons,
+#meb-force-cron .dashicons,
+#meb-clean-cache .dashicons {
+    margin-right: 5px;
+}
